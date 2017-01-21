@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4103719E1E341D5F006043D1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4103719D1E341D5F006043D1 /* libsqlite3.tbd */; };
+		410371A21E341DB1006043D1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 410371A11E341DB1006043D1 /* DBManager.m */; };
 		41F517381E20FAFB0049702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F517371E20FAFB0049702E /* main.m */; };
 		41F5173B1E20FAFB0049702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173A1E20FAFB0049702E /* AppDelegate.m */; };
 		41F5173E1E20FAFB0049702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173D1E20FAFB0049702E /* ViewController.m */; };
 		41F517411E20FAFB0049702E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F5173F1E20FAFB0049702E /* Main.storyboard */; };
 		41F517431E20FAFB0049702E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F517421E20FAFB0049702E /* Assets.xcassets */; };
 		41F517461E20FAFB0049702E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F517441E20FAFB0049702E /* LaunchScreen.storyboard */; };
+		41F5174F1E20FB5C0049702E /* RSSChannels.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5174E1E20FB5C0049702E /* RSSChannels.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4103719D1E341D5F006043D1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		410371A01E341DB1006043D1 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		410371A11E341DB1006043D1 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		41F517331E20FAFB0049702E /* RSSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F517371E20FAFB0049702E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41F517391E20FAFB0049702E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +32,8 @@
 		41F517421E20FAFB0049702E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41F517451E20FAFB0049702E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41F517471E20FAFB0049702E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F5174D1E20FB5C0049702E /* RSSChannels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSSChannels.h; path = ../RSSChannels.h; sourceTree = "<group>"; };
+		41F5174E1E20FB5C0049702E /* RSSChannels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSSChannels.m; path = ../RSSChannels.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4103719E1E341D5F006043D1 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4103719C1E341D5F006043D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4103719D1E341D5F006043D1 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4103719F1E341D75006043D1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				410371A01E341DB1006043D1 /* DBManager.h */,
+				410371A11E341DB1006043D1 /* DBManager.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		41F5172A1E20FAFB0049702E = {
 			isa = PBXGroup;
 			children = (
 				41F517351E20FAFB0049702E /* RSSiOS */,
 				41F517341E20FAFB0049702E /* Products */,
+				4103719C1E341D5F006043D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +85,8 @@
 		41F517351E20FAFB0049702E /* RSSiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4103719F1E341D75006043D1 /* Database */,
+				41F517501E20FB690049702E /* Model */,
 				41F517391E20FAFB0049702E /* AppDelegate.h */,
 				41F5173A1E20FAFB0049702E /* AppDelegate.m */,
 				41F5173C1E20FAFB0049702E /* ViewController.h */,
@@ -77,6 +106,15 @@
 				41F517371E20FAFB0049702E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41F517501E20FB690049702E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41F5174E1E20FB5C0049702E /* RSSChannels.m */,
+				41F5174D1E20FB5C0049702E /* RSSChannels.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41F5174F1E20FB5C0049702E /* RSSChannels.m in Sources */,
 				41F5173E1E20FAFB0049702E /* ViewController.m in Sources */,
 				41F5173B1E20FAFB0049702E /* AppDelegate.m in Sources */,
 				41F517381E20FAFB0049702E /* main.m in Sources */,
+				410371A21E341DB1006043D1 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +347,7 @@
 				41F5174C1E20FAFB0049702E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
