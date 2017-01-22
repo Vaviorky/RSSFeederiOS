@@ -10,6 +10,8 @@
 
 @interface RSSChannels : NSObject
 
-@property 
+@property (nonatomic, assign) int Id;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *link;
 
 @end

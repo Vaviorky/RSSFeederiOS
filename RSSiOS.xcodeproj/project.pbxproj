@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4103719E1E341D5F006043D1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4103719D1E341D5F006043D1 /* libsqlite3.tbd */; };
 		410371A21E341DB1006043D1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 410371A11E341DB1006043D1 /* DBManager.m */; };
+		410443691E34BE2600169586 /* database.sql in Resources */ = {isa = PBXBuildFile; fileRef = 410443681E34BE2600169586 /* database.sql */; };
+		4104436E1E34D2B300169586 /* RSSItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4104436D1E34D2B300169586 /* RSSItemsViewController.m */; };
+		4168D6E01E3503E70067B646 /* AddChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168D6DF1E3503E70067B646 /* AddChannelViewController.m */; };
+		4168D6E41E35064E0067B646 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168D6E31E35064E0067B646 /* ToastView.m */; };
 		41F517381E20FAFB0049702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F517371E20FAFB0049702E /* main.m */; };
 		41F5173B1E20FAFB0049702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173A1E20FAFB0049702E /* AppDelegate.m */; };
 		41F5173E1E20FAFB0049702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173D1E20FAFB0049702E /* ViewController.m */; };
@@ -22,6 +26,13 @@
 		4103719D1E341D5F006043D1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		410371A01E341DB1006043D1 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		410371A11E341DB1006043D1 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		410443681E34BE2600169586 /* database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = database.sql; path = ../../../database.sql; sourceTree = "<group>"; };
+		4104436C1E34D2B300169586 /* RSSItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItemsViewController.h; sourceTree = "<group>"; };
+		4104436D1E34D2B300169586 /* RSSItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItemsViewController.m; sourceTree = "<group>"; };
+		4168D6DE1E3503E70067B646 /* AddChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChannelViewController.h; sourceTree = "<group>"; };
+		4168D6DF1E3503E70067B646 /* AddChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChannelViewController.m; sourceTree = "<group>"; };
+		4168D6E21E35064E0067B646 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
+		4168D6E31E35064E0067B646 /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
 		41F517331E20FAFB0049702E /* RSSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F517371E20FAFB0049702E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41F517391E20FAFB0049702E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,10 +70,20 @@
 		4103719F1E341D75006043D1 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				410443681E34BE2600169586 /* database.sql */,
 				410371A01E341DB1006043D1 /* DBManager.h */,
 				410371A11E341DB1006043D1 /* DBManager.m */,
 			);
 			name = Database;
+			sourceTree = "<group>";
+		};
+		4168D6E11E3506310067B646 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				4168D6E21E35064E0067B646 /* ToastView.h */,
+				4168D6E31E35064E0067B646 /* ToastView.m */,
+			);
+			name = ToastView;
 			sourceTree = "<group>";
 		};
 		41F5172A1E20FAFB0049702E = {
@@ -85,10 +106,15 @@
 		41F517351E20FAFB0049702E /* RSSiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4168D6E11E3506310067B646 /* ToastView */,
 				4103719F1E341D75006043D1 /* Database */,
 				41F517501E20FB690049702E /* Model */,
 				41F517391E20FAFB0049702E /* AppDelegate.h */,
 				41F5173A1E20FAFB0049702E /* AppDelegate.m */,
+				4168D6DF1E3503E70067B646 /* AddChannelViewController.m */,
+				4168D6DE1E3503E70067B646 /* AddChannelViewController.h */,
+				4104436C1E34D2B300169586 /* RSSItemsViewController.h */,
+				4104436D1E34D2B300169586 /* RSSItemsViewController.m */,
 				41F5173C1E20FAFB0049702E /* ViewController.h */,
 				41F5173D1E20FAFB0049702E /* ViewController.m */,
 				41F5173F1E20FAFB0049702E /* Main.storyboard */,
@@ -178,6 +204,7 @@
 				41F517461E20FAFB0049702E /* LaunchScreen.storyboard in Resources */,
 				41F517431E20FAFB0049702E /* Assets.xcassets in Resources */,
 				41F517411E20FAFB0049702E /* Main.storyboard in Resources */,
+				410443691E34BE2600169586 /* database.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,8 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4104436E1E34D2B300169586 /* RSSItemsViewController.m in Sources */,
 				41F5174F1E20FB5C0049702E /* RSSChannels.m in Sources */,
 				41F5173E1E20FAFB0049702E /* ViewController.m in Sources */,
+				4168D6E01E3503E70067B646 /* AddChannelViewController.m in Sources */,
+				4168D6E41E35064E0067B646 /* ToastView.m in Sources */,
 				41F5173B1E20FAFB0049702E /* AppDelegate.m in Sources */,
 				41F517381E20FAFB0049702E /* main.m in Sources */,
 				410371A21E341DB1006043D1 /* DBManager.m in Sources */,
