@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4103719E1E341D5F006043D1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4103719D1E341D5F006043D1 /* libsqlite3.tbd */; };
 		410371A21E341DB1006043D1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 410371A11E341DB1006043D1 /* DBManager.m */; };
-		410443691E34BE2600169586 /* database.sql in Resources */ = {isa = PBXBuildFile; fileRef = 410443681E34BE2600169586 /* database.sql */; };
 		4104436E1E34D2B300169586 /* RSSItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4104436D1E34D2B300169586 /* RSSItemsViewController.m */; };
 		41661CA01E356AED003FB711 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 41661C9B1E356AED003FB711 /* MWFeedParser.m */; };
 		41661CA11E356AED003FB711 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 41661C9D1E356AED003FB711 /* MWFeedInfo.m */; };
@@ -24,6 +23,9 @@
 		419A19201E35E4AE00EE56E3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A191F1E35E4AE00EE56E3 /* Reachability.m */; };
 		419A19281E36127A00EE56E3 /* rssicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 419A19271E36127A00EE56E3 /* rssicon.png */; };
 		419A192B1E363FB900EE56E3 /* ChannelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A192A1E363FB900EE56E3 /* ChannelItem.m */; };
+		419A192E1E368C4100EE56E3 /* ChannelItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A192D1E368C4100EE56E3 /* ChannelItemDetailsViewController.m */; };
+		419A19311E368CB200EE56E3 /* SiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A19301E368CB200EE56E3 /* SiteViewController.m */; };
+		419A19361E36934500EE56E3 /* CustomRssCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A19351E36934500EE56E3 /* CustomRssCell.m */; };
 		41F517381E20FAFB0049702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F517371E20FAFB0049702E /* main.m */; };
 		41F5173B1E20FAFB0049702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173A1E20FAFB0049702E /* AppDelegate.m */; };
 		41F5173E1E20FAFB0049702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173D1E20FAFB0049702E /* ViewController.m */; };
@@ -37,7 +39,6 @@
 		4103719D1E341D5F006043D1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		410371A01E341DB1006043D1 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		410371A11E341DB1006043D1 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		410443681E34BE2600169586 /* database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = database.sql; path = ../../../database.sql; sourceTree = "<group>"; };
 		4104436C1E34D2B300169586 /* RSSItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItemsViewController.h; sourceTree = "<group>"; };
 		4104436D1E34D2B300169586 /* RSSItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItemsViewController.m; sourceTree = "<group>"; };
 		41661C991E356AED003FB711 /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
@@ -66,6 +67,13 @@
 		419A19271E36127A00EE56E3 /* rssicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rssicon.png; sourceTree = "<group>"; };
 		419A19291E363FB900EE56E3 /* ChannelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelItem.h; sourceTree = "<group>"; };
 		419A192A1E363FB900EE56E3 /* ChannelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelItem.m; sourceTree = "<group>"; };
+		419A192C1E368C4100EE56E3 /* ChannelItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelItemDetailsViewController.h; sourceTree = "<group>"; };
+		419A192D1E368C4100EE56E3 /* ChannelItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelItemDetailsViewController.m; sourceTree = "<group>"; };
+		419A192F1E368CB200EE56E3 /* SiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SiteViewController.h; sourceTree = "<group>"; };
+		419A19301E368CB200EE56E3 /* SiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SiteViewController.m; sourceTree = "<group>"; };
+		419A19341E36934500EE56E3 /* CustomRssCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRssCell.h; sourceTree = "<group>"; };
+		419A19351E36934500EE56E3 /* CustomRssCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRssCell.m; sourceTree = "<group>"; };
+		419A19371E36A5E000EE56E3 /* database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sql; sourceTree = "<group>"; };
 		41F517331E20FAFB0049702E /* RSSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F517371E20FAFB0049702E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41F517391E20FAFB0049702E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,9 +114,9 @@
 		4103719F1E341D75006043D1 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				410443681E34BE2600169586 /* database.sql */,
 				410371A01E341DB1006043D1 /* DBManager.h */,
 				410371A11E341DB1006043D1 /* DBManager.m */,
+				419A19371E36A5E000EE56E3 /* database.sql */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -169,6 +177,15 @@
 			name = ToastView;
 			sourceTree = "<group>";
 		};
+		419A19331E36931300EE56E3 /* RSSItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				419A19341E36934500EE56E3 /* CustomRssCell.h */,
+				419A19351E36934500EE56E3 /* CustomRssCell.m */,
+			);
+			name = RSSItemCell;
+			sourceTree = "<group>";
+		};
 		41F5172A1E20FAFB0049702E = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +207,7 @@
 		41F517351E20FAFB0049702E /* RSSiOS */ = {
 			isa = PBXGroup;
 			children = (
+				419A19331E36931300EE56E3 /* RSSItemCell */,
 				41661CB11E356F24003FB711 /* Logic */,
 				41661C961E356A79003FB711 /* RSSParser */,
 				4168D6E11E3506310067B646 /* ToastView */,
@@ -199,8 +217,12 @@
 				41F5173A1E20FAFB0049702E /* AppDelegate.m */,
 				4168D6DE1E3503E70067B646 /* AddChannelViewController.h */,
 				4168D6DF1E3503E70067B646 /* AddChannelViewController.m */,
+				419A192C1E368C4100EE56E3 /* ChannelItemDetailsViewController.h */,
+				419A192D1E368C4100EE56E3 /* ChannelItemDetailsViewController.m */,
 				4104436C1E34D2B300169586 /* RSSItemsViewController.h */,
 				4104436D1E34D2B300169586 /* RSSItemsViewController.m */,
+				419A192F1E368CB200EE56E3 /* SiteViewController.h */,
+				419A19301E368CB200EE56E3 /* SiteViewController.m */,
 				41F5173C1E20FAFB0049702E /* ViewController.h */,
 				41F5173D1E20FAFB0049702E /* ViewController.m */,
 				41F5173F1E20FAFB0049702E /* Main.storyboard */,
@@ -293,7 +315,6 @@
 				41F517461E20FAFB0049702E /* LaunchScreen.storyboard in Resources */,
 				41F517431E20FAFB0049702E /* Assets.xcassets in Resources */,
 				41F517411E20FAFB0049702E /* Main.storyboard in Resources */,
-				410443691E34BE2600169586 /* database.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				419A192E1E368C4100EE56E3 /* ChannelItemDetailsViewController.m in Sources */,
 				4104436E1E34D2B300169586 /* RSSItemsViewController.m in Sources */,
 				41F5174F1E20FB5C0049702E /* RSSChannels.m in Sources */,
 				41661CA01E356AED003FB711 /* MWFeedParser.m in Sources */,
@@ -316,9 +338,11 @@
 				41661CB41E356F5A003FB711 /* RefreshAndAddToDatabase.m in Sources */,
 				41F517381E20FAFB0049702E /* main.m in Sources */,
 				419A19201E35E4AE00EE56E3 /* Reachability.m in Sources */,
+				419A19311E368CB200EE56E3 /* SiteViewController.m in Sources */,
 				410371A21E341DB1006043D1 /* DBManager.m in Sources */,
 				41661CA81E356B0A003FB711 /* NSString+HTML.m in Sources */,
 				41661CA11E356AED003FB711 /* MWFeedInfo.m in Sources */,
+				419A19361E36934500EE56E3 /* CustomRssCell.m in Sources */,
 				41661CA91E356B0A003FB711 /* NSDate+InternetDateTime.m in Sources */,
 				41661CB01E356E10003FB711 /* GTMNSString+HTML.m in Sources */,
 			);

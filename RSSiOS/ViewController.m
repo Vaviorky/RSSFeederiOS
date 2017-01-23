@@ -8,11 +8,10 @@
 
 #import "ViewController.h"
 #import "RSSItemsViewController.h"
-#import "ToastView.h"
 #import "MWFeedParser.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "Reachability.h"
-#import "RefreshAndAddToDatabase.h"
+
 
 @interface ViewController ()
 @property (nonatomic, strong) DBManager *dbManager;
