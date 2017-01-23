@@ -10,5 +10,6 @@
 
 @interface RefreshAndAddToDatabase : NSObject
 
+-(void) refreshDatabase;
 
 @end

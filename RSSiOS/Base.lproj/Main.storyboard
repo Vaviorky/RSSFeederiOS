@@ -39,10 +39,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="oMb-H8-poi"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="06n-k4-ZJV"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,6 +60,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="tblRssChannels" destination="1Z2-N6-uWP" id="5Xa-7U-QGt"/>
                         <segue destination="ylt-Vx-dmK" kind="show" identifier="addNewChannel" id="51R-lf-54T"/>
                     </connections>
                 </viewController>

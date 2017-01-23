@@ -35,7 +35,7 @@
     self.tblRssChannels.dataSource = self;
     
     //load data
-   // [self removeAllData];
+    //[self removeAllData];
     [self loadData];
     
 }
@@ -61,7 +61,6 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[[self.arrChannelsInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfChannelName]];
-    
     return cell;
 }
 
@@ -96,6 +95,7 @@
     }
     self.arrChannelsInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     [self.tblRssChannels reloadData];
+    NSLog(@"Calling reloadData on %@", self.tblRssChannels);
 }
 - (void)addingChannelFinished {
     [self loadData];
@@ -116,7 +116,10 @@
     [self presentViewController:alert animated:YES completion:nil];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [NSThread sleepForTimeInterval:.5];
+        
+        RefreshAndAddToDatabase *refreshDB = [[RefreshAndAddToDatabase alloc]init];
+        
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [alert dismissViewControllerAnimated:YES completion:nil];
         });

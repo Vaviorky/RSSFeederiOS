@@ -10,7 +10,7 @@
 #import "DBManager.h"
 #import "AddChannelViewController.h"
 @class RSSItemsViewController;
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddChannelViewControllerDelegate>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,AddChannelViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tblRssChannels;
 @property (strong, nonatomic) RSSItemsViewController *itemsViewController;

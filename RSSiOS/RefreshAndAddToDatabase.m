@@ -14,5 +14,9 @@
 @end
 
 @implementation RefreshAndAddToDatabase
-
+-(void)refreshDatabase {
+    self.dbManager = [[DBManager alloc] initWithDatabaseFilename:@"database.sql"];
+    
+    
+}
 @end
