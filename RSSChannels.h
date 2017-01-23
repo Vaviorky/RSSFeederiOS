@@ -11,7 +11,7 @@
 @interface RSSChannels : NSObject
 
 @property (nonatomic, assign) int Id;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *link;
+@property (nonatomic, strong) NSString *Title;
+@property (nonatomic, strong) NSString *Description;
 
 @end

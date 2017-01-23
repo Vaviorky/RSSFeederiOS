@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RSSItemsViewController : UIViewController
+@interface RSSItemsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, assign) int channelId;
-@property (nonatomic, copy) NSString *viewTitle;
-
+@property (nonatomic, assign) NSInteger channelId;
+@property (weak, nonatomic) IBOutlet UITableView *tblRssItems;
 @end

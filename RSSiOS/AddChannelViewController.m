@@ -11,7 +11,9 @@
 @interface AddChannelViewController ()
 
 @property (nonatomic, strong) DBManager *dbManager;
-
+@property (nonatomic, assign) BOOL reachability;
+- (BOOL) isStringUrl: (NSString*) candidate;
+- (BOOL) checkReachabilityOfUrl: (NSString*) candidate;
 @end
 
 @implementation AddChannelViewController
@@ -34,20 +36,52 @@
 
 -(void)addChannel:(id)sender {
     
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Ostrzeżenie"
+                                  message:@"Wszystkie pola muszą być wypełnione"
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    [alert addAction:ok];
+    
+    
     if(!(self.channelName && self.channelName.text.length>0 && self.channelLink.text && self.channelLink.text.length>0)) {
-        UIAlertController * alert=   [UIAlertController
-                                      alertControllerWithTitle:@"Ostrzeżenie"
-                                      message:@"Wszystkie pola muszą być wypełnione"
-                                      preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+    if (!([self isStringUrl:self.channelLink.text])) {
+        alert=   [UIAlertController
+                  alertControllerWithTitle:@"Ostrzeżenie"
+                  message:@"Podany adres nie jest poprawnym adresem URL"
+                  preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+        
+    }
+    
+    BOOL reach;
+    reach = [self checkReachabilityOfUrl:self.channelLink.text];
+    [self setReachability:reach];
+    
+    if(![self reachability]) {
+        alert=   [UIAlertController
+                  alertControllerWithTitle:@"Ostrzeżenie"
+                  message:@"Nie ma połączenia"
+                  preferredStyle:UIAlertControllerStyleAlert];
         
         [alert addAction:ok];
         
@@ -74,6 +108,32 @@
     }
 }
 
+- (BOOL) isStringUrl: (NSString*) candidate {
+    NSURL *url = [NSURL URLWithString:candidate];
+    
+    if(url && url.scheme && url.host) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
+}
+- (BOOL)checkReachabilityOfUrl:(NSString *)candidate {
+    NSURL *url = [NSURL URLWithString:candidate];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"HEAD"];
+    
+    NSURLResponse *response;
+    NSError *error;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    if (data) {
+        return YES;
+    } else {
+        return NO;
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -82,13 +142,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

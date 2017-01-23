@@ -161,7 +161,6 @@
     //run the query and indicate that is not executable
     //the query string is converted to a char* object
     [self runQuery:[query UTF8String] isQueryExecutable:NO];
-    NSLog(@"SELECTION");
     
     return (NSArray *)self.arrResults;
 }

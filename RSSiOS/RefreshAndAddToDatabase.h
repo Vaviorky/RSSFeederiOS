@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface RefreshAndAddToDatabase : NSObject
+#import "MWFeedParser.h"
+@interface RefreshAndAddToDatabase : NSObject <MWFeedParserDelegate> {
+    
+    //parsing
+    MWFeedParser *feedParser;
+    NSMutableArray *parsedItems;
+    
+    //displaying
+    NSArray *itemsToDisplay;
+    NSDateFormatter *formatter;
+}
+@property (nonatomic, strong) NSArray *itemsToDisplay;
+-(void) refreshDatabase;
 
 @end
