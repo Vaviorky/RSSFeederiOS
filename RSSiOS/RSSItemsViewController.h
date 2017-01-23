@@ -10,7 +10,7 @@
 
 @interface RSSItemsViewController : UIViewController
 
-@property (nonatomic, assign) int channelId;
+@property (nonatomic, assign) NSInteger channelId;
 @property (nonatomic, copy) NSString *viewTitle;
 
 @end
