@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VZ8-X5-8uh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCellRecord" id="VZ8-X5-8uh">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VZ8-X5-8uh" id="VBu-p0-FMH">
@@ -49,17 +49,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="68M-OO-1RA">
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="refresh" id="pNA-HW-RWd">
+                            <barButtonItem style="done" systemItem="refresh" id="pNA-HW-RWd">
                                 <color key="tintColor" red="0.55531120300292969" green="0.50586873292922974" blue="0.91454333066940308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="iVI-aV-jMW">
                                 <color key="tintColor" red="0.55531120300292969" green="0.50586873292922974" blue="0.91454333066940308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="ylt-Vx-dmK" kind="show" identifier="addChannel" id="Dvd-cN-msZ"/>
+                                    <action selector="addNewChannel:" destination="BYZ-38-t0r" id="oQh-tz-HY3"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ylt-Vx-dmK" kind="show" identifier="addNewChannel" id="51R-lf-54T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

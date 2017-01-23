@@ -34,6 +34,27 @@
 
 -(void)addChannel:(id)sender {
     
+    if(!(self.channelName && self.channelName.text.length>0 && self.channelLink.text && self.channelLink.text.length>0)) {
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"Ostrzeżenie"
+                                      message:@"Wszystkie pola muszą być wypełnione"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
     NSString *query = [NSString stringWithFormat:@"insert into rsschannel(name, link) values ('%@', '%@')", self.channelName.text, self.channelLink.text];
     
     //execute

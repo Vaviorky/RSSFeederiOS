@@ -9,11 +9,16 @@
 #import "ViewController.h"
 #import "RSSItemsViewController.h"
 #import "ToastView.h"
+#import "MWFeedParser.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
+
 @interface ViewController ()
 @property (nonatomic, strong) DBManager *dbManager;
 @property (nonatomic, strong) NSArray *arrChannelsInfo;
 
 -(void) loadData;
+-(BOOL) isOnline;
 @end
 
 @implementation ViewController
@@ -30,8 +35,10 @@
     
     //load data
     NSLog(@"before load data");
+   // [self removeAllData];
     [self loadData];
     NSLog(@"after load data");
+    
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *) tableView {
@@ -54,12 +61,14 @@
     if(cell==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MainCell"];
     }
-    NSLog(@"%ld, %ld", indexOfChannelName, indexPath.row);
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[[self.arrChannelsInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfChannelName]];
     
     return cell;
 }
 
+-(IBAction)addNewChannel:(id)sender {
+    [self performSegueWithIdentifier:@"addNewChannel" sender:self];
+}
 
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -68,32 +77,42 @@
     {
         RSSItemsViewController *controller = (RSSItemsViewController *)segue.destinationViewController;
         controller.channelId = 1;
-        
         //pass data
     }
-    if ([[segue identifier] isEqualToString:@"addChannel"]) {
-        NSLog(@"KURWA MAC");
-        AddChannelViewController *addChannelViewController = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString:@"addNewChannel"]) {
+        AddChannelViewController *addChannelViewController = (AddChannelViewController *)segue.destinationViewController;
         addChannelViewController.delegate = self;
         
     }
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"mySegue" sender:self];
+   // [self performSegueWithIdentifier:@"mySegue" sender:self];
 }
 
 -(void)loadData {
     NSString *query = @"select * from RSSChannel";
-    
-    if(self.arrChannelsInfo != nil) {
-        self.arrChannelsInfo = nil;
+    if(self.arrChannelsInfo != NULL) {
+        self.arrChannelsInfo = NULL;
     }
     self.arrChannelsInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDB:query]];
     [self.tblRssChannels reloadData];
 }
 - (void)addingChannelFinished {
-    NSLog(@"AAAABBBB");
+    [self loadData];
+}
+
+- (BOOL)isOnline {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return networkStatus != NotReachable;
+}
+
+
+
+-(void)removeAllData {
+    NSString *query = [NSString stringWithFormat:@"delete from RSSChannel"];
+    [self.dbManager executeQuery:query];
     [self loadData];
 }
 
@@ -101,7 +120,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

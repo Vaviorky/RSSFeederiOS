@@ -75,13 +75,12 @@
     self.arrColumnNames = [[NSMutableArray alloc]init];
     
     //open the database
-    NSLog(@"Before open database");
+
     BOOL openDatabaseResult = sqlite3_open([databasePath UTF8String], &sqlite3Database);
     
     if(openDatabaseResult==SQLITE_OK) {
         //declare a sqlite_stmt object in which will be stored query after having been compiled into a SQLite statement.
         sqlite3_stmt *compiledStatement;
-        NSLog(@"Open database successful");
         
         BOOL prepareStatementResult = sqlite3_prepare_v2(sqlite3Database, query, -1, &compiledStatement, nil);
         if(prepareStatementResult == SQLITE_OK) {
@@ -162,6 +161,7 @@
     //run the query and indicate that is not executable
     //the query string is converted to a char* object
     [self runQuery:[query UTF8String] isQueryExecutable:NO];
+    NSLog(@"SELECTION");
     
     return (NSArray *)self.arrResults;
 }
