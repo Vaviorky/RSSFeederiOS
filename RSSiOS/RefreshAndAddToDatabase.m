@@ -7,6 +7,11 @@
 //
 
 #import "RefreshAndAddToDatabase.h"
+#import "DBManager.h"
+@interface RefreshAndAddToDatabase()
+@property (nonatomic, strong) DBManager *dbManager;
+
+@end
 
 @implementation RefreshAndAddToDatabase
 

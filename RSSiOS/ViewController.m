@@ -12,6 +12,7 @@
 #import "MWFeedParser.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "Reachability.h"
+#import "RefreshAndAddToDatabase.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) DBManager *dbManager;
@@ -19,13 +20,13 @@
 
 -(void) loadData;
 -(BOOL) isOnline;
+-(IBAction)refresh:(id)sender;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"before dbmanager");
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"RSS Feeder";
     
@@ -34,10 +35,8 @@
     self.tblRssChannels.dataSource = self;
     
     //load data
-    NSLog(@"before load data");
    // [self removeAllData];
     [self loadData];
-    NSLog(@"after load data");
     
 }
 
@@ -108,7 +107,22 @@
     return networkStatus != NotReachable;
 }
 
-
+- (IBAction)refresh:(id)sender {
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"Wczytywanie"
+                                  message:@"Nowe newsy są ładowane. Zaczekaj..."
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:.5];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        });
+    });
+    
+}
 
 -(void)removeAllData {
     NSString *query = [NSString stringWithFormat:@"delete from RSSChannel"];

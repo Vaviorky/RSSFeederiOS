@@ -51,6 +51,9 @@
                         <rightBarButtonItems>
                             <barButtonItem style="done" systemItem="refresh" id="pNA-HW-RWd">
                                 <color key="tintColor" red="0.55531120300292969" green="0.50586873292922974" blue="0.91454333066940308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="refresh:" destination="BYZ-38-t0r" id="YjA-IO-V8h"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="iVI-aV-jMW">
                                 <color key="tintColor" red="0.55531120300292969" green="0.50586873292922974" blue="0.91454333066940308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
