@@ -26,6 +26,7 @@
 		419A192E1E368C4100EE56E3 /* ChannelItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A192D1E368C4100EE56E3 /* ChannelItemDetailsViewController.m */; };
 		419A19311E368CB200EE56E3 /* SiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A19301E368CB200EE56E3 /* SiteViewController.m */; };
 		419A19361E36934500EE56E3 /* CustomRssCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 419A19351E36934500EE56E3 /* CustomRssCell.m */; };
+		419A193D1E36D2A600EE56E3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 419A193C1E36D2A600EE56E3 /* Icon.png */; };
 		41F517381E20FAFB0049702E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F517371E20FAFB0049702E /* main.m */; };
 		41F5173B1E20FAFB0049702E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173A1E20FAFB0049702E /* AppDelegate.m */; };
 		41F5173E1E20FAFB0049702E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F5173D1E20FAFB0049702E /* ViewController.m */; };
@@ -74,6 +75,7 @@
 		419A19341E36934500EE56E3 /* CustomRssCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomRssCell.h; sourceTree = "<group>"; };
 		419A19351E36934500EE56E3 /* CustomRssCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomRssCell.m; sourceTree = "<group>"; };
 		419A19371E36A5E000EE56E3 /* database.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sql; sourceTree = "<group>"; };
+		419A193C1E36D2A600EE56E3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		41F517331E20FAFB0049702E /* RSSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F517371E20FAFB0049702E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41F517391E20FAFB0049702E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				419A19271E36127A00EE56E3 /* rssicon.png */,
+				419A193C1E36D2A600EE56E3 /* Icon.png */,
 				41F517351E20FAFB0049702E /* RSSiOS */,
 				41F517341E20FAFB0049702E /* Products */,
 				4103719C1E341D5F006043D1 /* Frameworks */,
@@ -313,6 +316,7 @@
 			files = (
 				419A19281E36127A00EE56E3 /* rssicon.png in Resources */,
 				41F517461E20FAFB0049702E /* LaunchScreen.storyboard in Resources */,
+				419A193D1E36D2A600EE56E3 /* Icon.png in Resources */,
 				41F517431E20FAFB0049702E /* Assets.xcassets in Resources */,
 				41F517411E20FAFB0049702E /* Main.storyboard in Resources */,
 			);
